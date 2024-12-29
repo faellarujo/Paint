@@ -3,35 +3,7 @@
 <head>
     <title>Cadastro de Pedido</title>
 </head>
-
-<style>
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        margin: 0 auto;
-    }
-
-    div {
-        margin-bottom: 10px;
-    }
-
-    label {
-        margin-right: 10px;
-    }
-
-    input {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    h1 {
-        text-align: center;
-    }
-</style>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
 
 <body>
     <h1>Cadastro de Pedido</h1>
@@ -56,6 +28,12 @@
         <div>
             <button type="submit">Cadastrar</button>
         </div>
+
+</body>
+<div>
+    <a href="/pedidos" class="button">Visualizar Pedidos</a>
+</div>
+</html>
     </form>
     <div th:if="${message}">
         <p th:text="${message}"></p>

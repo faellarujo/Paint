@@ -16,13 +16,13 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
-    @PostMapping("/pedido")
-    @Transactional
-    public String createPedido(@RequestBody @Valid PedidoResquest pedido) {
-        final PedidoModel model = pedido.toModel();
-        pedidoService.createPedido(model);
-        return "Pedido criado com sucesso";
-    }
+//    @PostMapping("/pedido")
+//    @Transactional
+//    public String createPedido(@RequestBody @Valid PedidoResquest pedido) {
+//        final PedidoModel model = pedido.toModel();
+//        pedidoService.createPedido(model);
+//        return "Pedido criado com sucesso";
+//    }
 }
 
 

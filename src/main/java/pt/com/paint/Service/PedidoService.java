@@ -9,6 +9,8 @@ import pt.com.paint.model.PedidoModel;
 import pt.com.paint.repositore.PedidoRepositore;
 import pt.com.paint.repositore.StatusRepositore;
 
+import java.util.List;
+
 @Service
 public class PedidoService {
 
@@ -41,6 +43,11 @@ public class PedidoService {
 
     private void setaStatudPedido(PedidoModel pedido) {
         pedido.setStatus(statusRepositore.findByStatus("Aberto"));
+    }
+
+    public List<PedidoModel> getAllPedidos() {
+        final List<PedidoModel> all = pedidoRepositore.findAll();
+        return pedidoRepositore.findAll();
     }
 
 

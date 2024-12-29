@@ -12,6 +12,8 @@ import pt.com.paint.Service.PedidoService;
 import pt.com.paint.model.PedidoModel;
 import pt.com.paint.request.PedidoResquest;
 
+import java.util.List;
+
 @Controller
 public class PedidoFormController {
 
@@ -36,4 +38,16 @@ public class PedidoFormController {
         }
         return "pedidoForm";
     }
+
+    @GetMapping("/pedidos")
+    public String getPedidos(Model model) {
+        List<PedidoModel> pedidos = pedidoService.getAllPedidos();
+        model.addAttribute("pedidos", pedidos);
+        return "pedidos";
+    }
+
+
+
+
+
 }

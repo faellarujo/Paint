@@ -51,9 +51,11 @@ public class PedidoModel {
         this.descricaoPedido = descricaoPedido;
     }
 
-    public StatusModel getStatus() {
+
+    public StatusModel getStatusModel() {
         return statusModel;
     }
+
 
     public void setStatus(StatusModel statusModel) {
         this.statusModel = statusModel;
