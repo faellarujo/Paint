@@ -1,6 +1,8 @@
-package pt.com.paint.exceptionHandler.model;
+package pt.com.paint.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class PedidoModel {
@@ -12,24 +14,24 @@ public class PedidoModel {
     @Column(nullable = false, name = "numeroPedido")
     private int numeroPedido;
 
-    @Column(nullable = false, name = "descriçãoPedido")
-    private String descriçãoPedido;
-
+    @Column(nullable = false, name = "descricaoPedido")
+    private String descricaoPedido;
 
     @ManyToOne
     @JoinColumn(name = "status_id", nullable = false)
-    private Status status;
+    private StatusModel statusModel;
 
-    @Column(nullable = false, name = "scriptsql")
+    @Column(name = "scriptsql")
+    @Size(max = 10000)
     private String scriptsql;
 
     public PedidoModel() {
     }
 
-    public PedidoModel(int numeroPedido, String descriçãoPedido, Status status, String scriptsql) {
+    public PedidoModel(int numeroPedido, String descricaoPedido, StatusModel statusModel, String scriptsql) {
         this.numeroPedido = numeroPedido;
-        this.descriçãoPedido = descriçãoPedido;
-        this.status = status;
+        this.descricaoPedido = descricaoPedido;
+        this.statusModel = statusModel;
         this.scriptsql = scriptsql;
     }
 
@@ -41,20 +43,20 @@ public class PedidoModel {
         this.numeroPedido = numeroPedido;
     }
 
-    public String getDescriçãoPedido() {
-        return descriçãoPedido;
+    public String getDescricaoPedido() {
+        return descricaoPedido;
     }
 
-    public void setDescriçãoPedido(String descriçãoPedido) {
-        this.descriçãoPedido = descriçãoPedido;
+    public void setDescricaoPedido(String descricaoPedido) {
+        this.descricaoPedido = descricaoPedido;
     }
 
-    public Status getStatus() {
-        return status;
+    public StatusModel getStatus() {
+        return statusModel;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(StatusModel statusModel) {
+        this.statusModel = statusModel;
     }
 
     public String getScriptsql() {
@@ -69,14 +71,9 @@ public class PedidoModel {
     public String toString() {
         return "PedidoModel{" +
                 "numeroPedido=" + numeroPedido +
-                ", descriçãoPedido='" + descriçãoPedido + '\'' +
-                ", status='" + status + '\'' +
+                ", descricaoPedido='" + descricaoPedido + '\'' +
+                ", statusModel='" + statusModel + '\'' +
                 ", scriptsql='" + scriptsql + '\'' +
                 '}';
     }
 }
-
-
-
-
-

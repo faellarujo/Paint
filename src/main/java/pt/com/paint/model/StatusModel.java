@@ -1,12 +1,11 @@
-package pt.com.paint.exceptionHandler.model;
+package pt.com.paint.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
-public class Status {
+public class StatusModel {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -15,10 +14,14 @@ public class Status {
     @Column(name = "status")
     private String status;
 
-    public Status() {
+    @OneToMany
+    @JoinColumn(name = "status_id")
+    private List<PedidoModel> pedidoModel;
+
+    public StatusModel() {
     }
 
-    public Status(String status) {
+    public StatusModel(String status) {
         this.status = status;
     }
 
