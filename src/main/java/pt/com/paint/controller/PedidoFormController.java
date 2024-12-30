@@ -29,7 +29,7 @@ public class PedidoFormController {
     @PostMapping("/pedido/form")
     @Transactional
     public String submitForm(@ModelAttribute @Valid PedidoResquest pedidoResquest, Model model) {
-        final PedidoModel pedidoModel  = pedidoResquest.toModel();
+        final PedidoModel pedidoModel = pedidoResquest.toModel();
         final String sucesso = pedidoService.createPedido(pedidoModel);
         if (sucesso.equals("Pedido criado com sucesso")) {
             model.addAttribute("pedido", new PedidoResquest());
@@ -46,8 +46,13 @@ public class PedidoFormController {
         return "pedidos";
     }
 
+    @GetMapping("/pedido")
+    public String getPedido(Model model) {
+        model.getAttribute("pedido");
 
-
-
+        return "";
+    }
 
 }
+
+

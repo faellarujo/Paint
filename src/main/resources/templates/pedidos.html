@@ -3,8 +3,6 @@
 <head>
     <title>Lista de Pedidos</title>
 </head>
-
-
 <style>
     table {
         border-collapse: collapse;
@@ -37,16 +35,9 @@
                 <td th:text="${pedido.numeroPedido}"></td>
                 <td th:text="${pedido.descricaoPedido}"></td>
                 <td th:text="${pedido.statusModel.status}"></td>
-                <td th:text="${pedido.scriptsql}"></td>
+                <td><pre th:text="${pedido.scriptsql}"></pre></td>
             </tr>
         </tbody>
     </table>
 </body>
 </html>
-
-
-
-
-
-
-

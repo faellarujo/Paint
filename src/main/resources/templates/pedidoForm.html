@@ -12,12 +12,11 @@
             <label for="numeroPedido">Número do Pedido:</label>
             <input type="text" id="numeroPedido" th:field="*{numeroPedido}" />
         </div>
-        <div>
             <label for="descricaoPedido">Descrição do Pedido:</label>
             <input type="text" id="descricaoPedido" th:field="*{descricaoPedido}" />
         </div>
         <div>
-            <label for="scriptsql">Script SQL::</label>
+            <label for="scriptsql">Script SQL:</label>
         </div>
             <textarea id="scriptsql" th:field="*{scriptsql}" rows="10"></textarea>
         </div>
@@ -27,12 +26,17 @@
         </div>
         <div>
             <button type="submit">Cadastrar</button>
+            <br>
+            <br>
+            <button type="button" onclick="addScript()">Localizar</button>
         </div>
+        <div>
+            <a href="/pedidos" class="button">Visualizar Pedidos</a>
+        </div>
+    </form>
 
 </body>
-<div>
-    <a href="/pedidos" class="button">Visualizar Pedidos</a>
-</div>
+
 </html>
     </form>
     <div th:if="${message}">

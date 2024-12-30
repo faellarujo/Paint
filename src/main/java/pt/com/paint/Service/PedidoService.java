@@ -1,5 +1,6 @@
 package pt.com.paint.Service;
 
+import com.github.vertical_blank.sqlformatter.SqlFormatter;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class PedidoService {
             final PedidoModel pedidoExistente = getPedido(pedido);
             if (pedidoExistente == null) {
                 setaStatudPedido(pedido);
+                String formattedSql =  SqlFormatter.format(pedido.getScriptsql());
+                pedido.setScriptsql(formattedSql);
                 manager.persist(pedido);
             } else {
                 throw new PedidoJaExistenteException("Pedido já existe");
@@ -36,7 +39,7 @@ public class PedidoService {
         return "Pedido criado com sucesso";
     }
 
-    private PedidoModel getPedido(PedidoModel pedido) {
+    public PedidoModel getPedido(PedidoModel pedido) {
         PedidoModel pedidoExistente = pedidoRepositore.findByNumeroPedido(pedido.getNumeroPedido());
         return pedidoExistente;
     }
