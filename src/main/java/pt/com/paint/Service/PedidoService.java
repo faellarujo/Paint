@@ -53,6 +53,11 @@ public class PedidoService {
         return pedidoRepositore.findAll();
     }
 
+    public boolean pedidoExiste(Integer numeroPedido) {
+        PedidoModel pedidoExistente = pedidoRepositore.findByNumeroPedido(numeroPedido);
+        return pedidoExistente != null;
+    }
+
 
 
 }

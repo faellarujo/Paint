@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.com.paint.Service.PedidoService;
 import pt.com.paint.model.PedidoModel;
 import pt.com.paint.request.PedidoResquest;
@@ -44,13 +45,6 @@ public class PedidoFormController {
         List<PedidoModel> pedidos = pedidoService.getAllPedidos();
         model.addAttribute("pedidos", pedidos);
         return "pedidos";
-    }
-
-    @GetMapping("/pedido")
-    public String getPedido(Model model) {
-        model.getAttribute("pedido");
-
-        return "";
     }
 
 }

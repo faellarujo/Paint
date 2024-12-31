@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Verificação de Pedido</title>
+</head>
+<body>
+<h1>Verificação de Pedido</h1>
+<p th:if="${existe}">O pedido existe na base de dados.</p>
+<p th:if="${!existe}">O pedido não existe na base de dados.</p>
+<a href="/pedido/form">Voltar ao formulário</a>
+</body>
+</html>
