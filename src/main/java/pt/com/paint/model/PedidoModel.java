@@ -35,6 +35,10 @@ public class PedidoModel {
         this.scriptsql = scriptsql;
     }
 
+    public PedidoModel(Integer numeroPedido) {
+        this.numeroPedido = numeroPedido;
+    }
+
     public int getNumeroPedido() {
         return numeroPedido;
     }

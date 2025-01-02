@@ -32,6 +32,8 @@ public class PedidoResquest {
         this.scriptsql = scriptsql;
     }
 
+
+
     public Integer getNumeroPedido() {
         return numeroPedido;
     }

@@ -7,7 +7,7 @@
 
 <body>
 <h1>Localizar Pedido</h1>
-<form action="#" th:action="@{/pedido/localizar}" th:object="${existe}" method="get">
+<form action="#" th:action="@{/localizar/pedido}" th:object="${existe}" method="post">
     <div>
         <label for="numeroPedido">Número do Pedido:</label>
         <input type="text" id="numeroPedido" th:field="*{numeroPedido}"/>
