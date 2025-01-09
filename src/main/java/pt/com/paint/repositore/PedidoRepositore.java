@@ -8,6 +8,6 @@ import pt.com.paint.model.PedidoModel;
 
 @Repository
 public interface PedidoRepositore extends JpaRepository<PedidoModel, Long> {
-    PedidoModel findByNumeroPedido(int pedido);
 
+    PedidoModel findByNumeroPedido(Long numeroPedido);
 }

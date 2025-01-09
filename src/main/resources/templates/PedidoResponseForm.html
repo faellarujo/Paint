@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de Pedido</title>
+</head>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+
+<body>
+<h1>Cadastro de Pedido</h1>
+<form action="#" th:action="@{/pedido/form}" th:object="${pedidoResponse}" method="post">
+    <div>
+        <label for="numeroPedido">Número do Pedido:</label>
+        <input type="text" id="numeroPedido" th:field="*{numeroPedido}" />
+    </div>
+    <label for="descricaoPedido">Descrição do Pedido:</label>
+    <input type="text" id="descricaoPedido" th:field="*{descricaoPedido}" />
+    </div>
+    <div>
+        <label for="scriptsql">Script SQL:</label>
+    </div>
+    <textarea id="scriptsql" th:field="*{scriptsql}" rows="10"></textarea>
+    </div>
+    <div>
+        <label for="status">Status:</label>
+        <input type="text" id="status" th:field="*{statusModel.status}" />
+    </div>
+    <div>
+        <button type="submit">Cadastrar</button>
+        <br>
+    </div>
+    <div>
+        <a href="/pedidos" class="button">Visualizar Pedidos</a>
+        <a href="/localizar/pedido" class="button">Localizar Pedido</a>
+    </div>
+</form>
+
+</body>
+
+</html>
+</form>
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+
+
+
+

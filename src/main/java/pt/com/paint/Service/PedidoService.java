@@ -18,7 +18,6 @@ public class PedidoService {
     @PersistenceContext
     private EntityManager manager;
 
-
     @Autowired
     private PedidoRepositore pedidoRepositore;
 
@@ -27,7 +26,7 @@ public class PedidoService {
 
     public String createPedido(PedidoModel pedido) {
 
-            final PedidoModel pedidoExistente = getPedido(pedido);
+            final PedidoModel pedidoExistente = pedidoRepositore.findByNumeroPedido(pedido.getNumeroPedido());
             if (pedidoExistente == null) {
                 setaStatudPedido(pedido);
                 String formattedSql =  SqlFormatter.format(pedido.getScriptsql());
@@ -53,9 +52,9 @@ public class PedidoService {
         return pedidoRepositore.findAll();
     }
 
-    public boolean pedidoExiste(Integer numeroPedido) {
+    public PedidoModel pedidoExiste(Long numeroPedido) {
         PedidoModel pedidoExistente = pedidoRepositore.findByNumeroPedido(numeroPedido);
-        return pedidoExistente != null;
+        return pedidoExistente;
     }
 
 

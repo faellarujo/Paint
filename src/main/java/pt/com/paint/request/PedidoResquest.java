@@ -10,7 +10,7 @@ public class PedidoResquest {
 
     @NotNull
     @JsonProperty("NumeroPedido")
-    private Integer numeroPedido;
+    private Long numeroPedido;
 
     @NotEmpty
     @JsonProperty("DescricaoPedido")
@@ -25,7 +25,7 @@ public class PedidoResquest {
     public PedidoResquest() {
     }
 
-    public PedidoResquest(@NotNull Integer numeroPedido, @NotEmpty String descricaoPedido, StatusModel statusModel, String scriptsql) {
+    public PedidoResquest(@NotNull Long numeroPedido, @NotEmpty String descricaoPedido, StatusModel statusModel, String scriptsql) {
         this.numeroPedido = numeroPedido;
         this.descricaoPedido = descricaoPedido;
         this.statusModelPedido = statusModel;
@@ -34,11 +34,11 @@ public class PedidoResquest {
 
 
 
-    public Integer getNumeroPedido() {
+    public Long getNumeroPedido() {
         return numeroPedido;
     }
 
-    public void setNumeroPedido(Integer numeroPedido) {
+    public void setNumeroPedido(Long numeroPedido) {
         this.numeroPedido = numeroPedido;
     }
 

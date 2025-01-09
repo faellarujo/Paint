@@ -6,20 +6,20 @@ import pt.com.paint.model.PedidoModel;
 public class LocalizaPedidoRequest {
 
     @NotNull
-    private Integer numeroPedido;
+    private Long numeroPedido;
 
-    public Integer getNumeroPedido() {
+    public Long getNumeroPedido() {
         return numeroPedido;
     }
 
-    public void setNumeroPedido(Integer numeroPedido) {
+    public void setNumeroPedido(Long numeroPedido) {
         this.numeroPedido = numeroPedido;
     }
 
     public LocalizaPedidoRequest() {
     }
 
-    public LocalizaPedidoRequest(Integer numeroPedido) {
+    public LocalizaPedidoRequest(Long numeroPedido) {
         this.numeroPedido = numeroPedido;
     }
 

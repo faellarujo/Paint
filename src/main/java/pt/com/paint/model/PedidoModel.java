@@ -9,10 +9,10 @@ public class PedidoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false, name = "numeroPedido")
-    private int numeroPedido;
+    private Long numeroPedido;
 
     @Column(nullable = false, name = "descricaoPedido")
     private String descricaoPedido;
@@ -28,22 +28,22 @@ public class PedidoModel {
     public PedidoModel() {
     }
 
-    public PedidoModel(int numeroPedido, String descricaoPedido, StatusModel statusModel, String scriptsql) {
+    public PedidoModel(Long numeroPedido, String descricaoPedido, StatusModel statusModel, String scriptsql) {
         this.numeroPedido = numeroPedido;
         this.descricaoPedido = descricaoPedido;
         this.statusModel = statusModel;
         this.scriptsql = scriptsql;
     }
 
-    public PedidoModel(Integer numeroPedido) {
+    public PedidoModel(Long numeroPedido) {
         this.numeroPedido = numeroPedido;
     }
 
-    public int getNumeroPedido() {
+    public Long getNumeroPedido() {
         return numeroPedido;
     }
 
-    public void setNumeroPedido(int numeroPedido) {
+    public void setNumeroPedido(Long numeroPedido) {
         this.numeroPedido = numeroPedido;
     }
 
