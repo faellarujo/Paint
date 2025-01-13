@@ -58,5 +58,10 @@ public class PedidoService {
     }
 
 
+    public PedidoModel alteraPedido(PedidoModel pedido) {
+        return pedido;
+    }
+
+
 
 }

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cadastro de Pedido</title>
+    <title>Alterar Pedido</title>
 </head>
-<link rel="stylesheet" th:href="@{/css/styles.css}" />
+<link rel="stylesheet" th:href="@{/css/styles.css}"/>
 
 <body>
-<h1>Cadastro de Pedido</h1>
+<h1>Alterar Pedido</h1>
 <form action="#" th:action="@{/pedido/form}" th:object="${pedidoResponse}" method="post">
     <div>
         <label for="numeroPedido">Número do Pedido:</label>
-        <input type="text" id="numeroPedido" th:field="*{numeroPedido}" />
+        <input type="text" id="numeroPedido" th:field="*{numeroPedido}"/>
     </div>
     <label for="descricaoPedido">Descrição do Pedido:</label>
-    <input type="text" id="descricaoPedido" th:field="*{descricaoPedido}" />
+    <input type="text" id="descricaoPedido" th:field="*{descricaoPedido}"/>
     </div>
     <div>
         <label for="scriptsql">Script SQL:</label>
@@ -22,10 +22,14 @@
     </div>
     <div>
         <label for="status">Status:</label>
-        <input type="text" id="status" th:field="*{statusModel.status}" />
+        <select th:field="*{statusModel.status}">
+            <option th:each="status : ${statusList}" th:value="${status.status}" th:text="${status.status}"></option>
+        </select>
+
+
     </div>
     <div>
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Alterar</button>
         <br>
     </div>
     <div>
